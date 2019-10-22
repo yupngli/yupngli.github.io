@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
+  <meta name="description" content="中级SQL(1) – CASE WHEN 与 子查询关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
 <meta name="keywords" content="SQL,Datacamp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中级SQL学习笔记">
+<meta property="og:title" content="中级SQL（1） -- CASE WHEN 与 子查询">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/interm_sql/index.html">
 <meta property="og:site_name" content="YUPNG POST">
-<meta property="og:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
+<meta property="og:description" content="中级SQL(1) – CASE WHEN 与 子查询关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T06:24:41.672Z">
+<meta property="og:updated_time" content="2019-10-22T07:12:42.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="中级SQL学习笔记">
-<meta name="twitter:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
+<meta name="twitter:title" content="中级SQL（1） -- CASE WHEN 与 子查询">
+<meta name="twitter:description" content="中级SQL(1) – CASE WHEN 与 子查询关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
   <link rel="canonical" href="http://yoursite.com/2019/10/22/interm_sql/">
 
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>中级SQL学习笔记 | YUPNG POST</title>
+  <title>中级SQL（1） -- CASE WHEN 与 子查询 | YUPNG POST</title>
   
 
 
@@ -279,7 +279,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            中级SQL学习笔记
+            中级SQL（1） -- CASE WHEN 与 子查询
             
 
           
@@ -296,7 +296,7 @@
                 
               
 
-              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：14:24:41" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
+              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：15:12:42" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
             </span>
           
             
@@ -332,7 +332,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="中级SQL"><a href="#中级SQL" class="headerlink" title="中级SQL"></a>中级SQL</h1><p>关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。</p>
+        <h1 id="中级SQL-1-–-CASE-WHEN-与-子查询"><a href="#中级SQL-1-–-CASE-WHEN-与-子查询" class="headerlink" title="中级SQL(1) – CASE WHEN 与 子查询"></a>中级SQL(1) – CASE WHEN 与 子查询</h1><p>关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。</p>
 <a id="more"></a>
 
 <p><strong>注意：</strong>在SQL里面可以这么使用多行批注：</p>
@@ -390,6 +390,11 @@
 
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">league	avg_goals	diff</span><br><span class="line">Switzerland Super League	2.89	0.12</span><br><span class="line">Poland Ekstraklasa	2.64	-0.13</span><br><span class="line">Netherlands Eredivisie	3.20	0.43</span><br><span class="line">Scotland Premier League	2.75	-0.02</span><br><span class="line">France Ligue 1	2.46	-0.31</span><br><span class="line">Spain LIGA BBVA	2.75	-0.02</span><br><span class="line">Germany 1. Bundesliga	3.16	0.39</span><br><span class="line">Italy Serie A	2.72	-0.04</span><br><span class="line">Portugal Liga ZON Sagres	2.37	-0.40</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="综合运用子查询-比较每个阶段平均进球数数与总进球数"><a href="#综合运用子查询-比较每个阶段平均进球数数与总进球数" class="headerlink" title="综合运用子查询 - 比较每个阶段平均进球数数与总进球数"></a>综合运用子查询 - 比较每个阶段平均进球数数与总进球数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="comment">-- Select the stage and average goals from s</span></span><br><span class="line">	stage,</span><br><span class="line">    <span class="keyword">ROUND</span>(avg_goals,<span class="number">2</span>) <span class="keyword">AS</span> avg_goal,</span><br><span class="line">    <span class="comment">-- Select the overall average for 2012/2013</span></span><br><span class="line">    (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(home_goal + away_goal) <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">WHERE</span> season = <span class="string">'2012/2013'</span>) <span class="keyword">AS</span> overall_avg</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">	<span class="comment">-- Select the stage and average goals in 2012/2013 from match</span></span><br><span class="line">	(<span class="keyword">SELECT</span></span><br><span class="line">		 stage,</span><br><span class="line">         <span class="keyword">AVG</span>(home_goal + away_goal) <span class="keyword">AS</span> avg_goals</span><br><span class="line">	 <span class="keyword">FROM</span> <span class="keyword">match</span></span><br><span class="line">	 <span class="keyword">WHERE</span> season = <span class="string">'2012/2013'</span></span><br><span class="line">	 <span class="keyword">GROUP</span> <span class="keyword">BY</span> stage) <span class="keyword">AS</span> s</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">	<span class="comment">-- Filter the main query using the subquery</span></span><br><span class="line">	s.avg_goals &gt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(home_goal + away_goal) </span><br><span class="line">                    <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">WHERE</span> season = <span class="string">'2012/2013'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">stage	avg_goal	overall_avg</span><br><span class="line">4	2.80	2.7726993865030675</span><br><span class="line">10	2.96	2.7726993865030675</span><br><span class="line">38	3.17	2.7726993865030675</span><br><span class="line">6	2.78	2.7726993865030675</span><br><span class="line">12	3.23	2.7726993865030675</span><br><span class="line">36	2.90	2.7726993865030675</span><br><span class="line">31	3.06	2.7726993865030675</span><br><span class="line">30	2.87	2.7726993865030675</span><br><span class="line">21	2.90	2.7726993865030675</span><br><span class="line">3	2.83	2.7726993865030675</span><br><span class="line">17	2.85	2.7726993865030675</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -472,7 +477,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL"><span class="nav-number">1.</span> <span class="nav-text">中级SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CASE-WHEN的使用技巧"><span class="nav-number">1.1.</span> <span class="nav-text">CASE WHEN的使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计2012-2013赛季每个国家共举办了多少场球赛"><span class="nav-number">1.1.1.</span> <span class="nav-text">统计2012-2013赛季每个国家共举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用国家-地区和比赛表来确定2012-2013、2013-2014和2014-2015赛季每个国家的主队（home-team）赢得比赛的总场数"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用国家/地区和比赛表来确定2012 / 2013、2013 / 2014和2014/2015赛季每个国家的主队（home_team）赢得比赛的总场数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巧妙利用AVG-函数检查每个赛季的平局百分比"><span class="nav-number">1.1.4.</span> <span class="nav-text">巧妙利用AVG()函数检查每个赛季的平局百分比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巧用子查询（Subqueries）"><span class="nav-number">1.2.</span> <span class="nav-text">巧用子查询（Subqueries）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WHERE-子查询-挑出满足：总进球数大于3倍平均进球数的比赛"><span class="nav-number">1.2.2.</span> <span class="nav-text">WHERE+子查询 - 挑出满足：总进球数大于3倍平均进球数的比赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WHERE-子查询-找出主场比赛有大于等于8颗进球的球队"><span class="nav-number">1.2.3.</span> <span class="nav-text">WHERE+子查询 - 找出主场比赛有大于等于8颗进球的球队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JOIN-子查询-使用match表生成一个子查询，然后将该子查询连接到country表以查询：总共有10个或更多进球的比赛都在哪些国家进行"><span class="nav-number">1.2.4.</span> <span class="nav-text">JOIN+子查询 - 使用match表生成一个子查询，然后将该子查询连接到country表以查询：总共有10个或更多进球的比赛都在哪些国家进行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-子查询-构造一个查询，计算每个国家-地区联赛中每场比赛的平均进球数"><span class="nav-number">1.2.5.</span> <span class="nav-text">SELECT+子查询 - 构造一个查询，计算每个国家/地区联赛中每场比赛的平均进球数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-子查询生成的单个值用于字段的计算"><span class="nav-number">1.2.6.</span> <span class="nav-text">SELECT+子查询生成的单个值用于字段的计算</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL-1-–-CASE-WHEN-与-子查询"><span class="nav-number">1.</span> <span class="nav-text">中级SQL(1) – CASE WHEN 与 子查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CASE-WHEN的使用技巧"><span class="nav-number">1.1.</span> <span class="nav-text">CASE WHEN的使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计2012-2013赛季每个国家共举办了多少场球赛"><span class="nav-number">1.1.1.</span> <span class="nav-text">统计2012-2013赛季每个国家共举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用国家-地区和比赛表来确定2012-2013、2013-2014和2014-2015赛季每个国家的主队（home-team）赢得比赛的总场数"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用国家/地区和比赛表来确定2012 / 2013、2013 / 2014和2014/2015赛季每个国家的主队（home_team）赢得比赛的总场数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巧妙利用AVG-函数检查每个赛季的平局百分比"><span class="nav-number">1.1.4.</span> <span class="nav-text">巧妙利用AVG()函数检查每个赛季的平局百分比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巧用子查询（Subqueries）"><span class="nav-number">1.2.</span> <span class="nav-text">巧用子查询（Subqueries）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WHERE-子查询-挑出满足：总进球数大于3倍平均进球数的比赛"><span class="nav-number">1.2.2.</span> <span class="nav-text">WHERE+子查询 - 挑出满足：总进球数大于3倍平均进球数的比赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WHERE-子查询-找出主场比赛有大于等于8颗进球的球队"><span class="nav-number">1.2.3.</span> <span class="nav-text">WHERE+子查询 - 找出主场比赛有大于等于8颗进球的球队</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JOIN-子查询-使用match表生成一个子查询，然后将该子查询连接到country表以查询：总共有10个或更多进球的比赛都在哪些国家进行"><span class="nav-number">1.2.4.</span> <span class="nav-text">JOIN+子查询 - 使用match表生成一个子查询，然后将该子查询连接到country表以查询：总共有10个或更多进球的比赛都在哪些国家进行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-子查询-构造一个查询，计算每个国家-地区联赛中每场比赛的平均进球数"><span class="nav-number">1.2.5.</span> <span class="nav-text">SELECT+子查询 - 构造一个查询，计算每个国家/地区联赛中每场比赛的平均进球数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT-子查询生成的单个值用于字段的计算"><span class="nav-number">1.2.6.</span> <span class="nav-text">SELECT+子查询生成的单个值用于字段的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#综合运用子查询-比较每个阶段平均进球数数与总进球数"><span class="nav-number">1.2.7.</span> <span class="nav-text">综合运用子查询 - 比较每个阶段平均进球数数与总进球数</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
