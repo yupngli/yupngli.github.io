@@ -58,15 +58,17 @@
   <meta name="description" content="内容包括了：  关联子查询 Window函数">
 <meta name="keywords" content="SQL,Datacamp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中级SQL（2） -- 关联子查询 与 Window函数">
+<meta property="og:title" content="中级SQL（2） -- 关联子查询、CTE 与 Window函数">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/interm_sql2/index.html">
 <meta property="og:site_name" content="YUPNG POST">
 <meta property="og:description" content="内容包括了：  关联子查询 Window函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T08:00:33.044Z">
+<meta property="og:image" content="http://yoursite.com/Users/yupng/Documents/githubhexo/source/_posts/Screen%20Shot%202019-10-22%20at%2017.45.02.png">
+<meta property="og:updated_time" content="2019-10-22T09:45:57.622Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="中级SQL（2） -- 关联子查询 与 Window函数">
+<meta name="twitter:title" content="中级SQL（2） -- 关联子查询、CTE 与 Window函数">
 <meta name="twitter:description" content="内容包括了：  关联子查询 Window函数">
+<meta name="twitter:image" content="http://yoursite.com/Users/yupng/Documents/githubhexo/source/_posts/Screen%20Shot%202019-10-22%20at%2017.45.02.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/22/interm_sql2/">
 
 
@@ -81,7 +83,7 @@
   };
 </script>
 
-  <title>中级SQL（2） -- 关联子查询 与 Window函数 | YUPNG POST</title>
+  <title>中级SQL（2） -- 关联子查询、CTE 与 Window函数 | YUPNG POST</title>
   
 
 
@@ -279,7 +281,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            中级SQL（2） -- 关联子查询 与 Window函数
+            中级SQL（2） -- 关联子查询、CTE 与 Window函数
             
 
           
@@ -296,7 +298,7 @@
                 
               
 
-              <time title="创建时间：2019-10-22 15:21:48 / 修改时间：16:00:33" itemprop="dateCreated datePublished" datetime="2019-10-22T15:21:48+08:00">2019-10-22</time>
+              <time title="创建时间：2019-10-22 15:21:48 / 修改时间：17:45:57" itemprop="dateCreated datePublished" datetime="2019-10-22T15:21:48+08:00">2019-10-22</time>
             </span>
           
             
@@ -339,29 +341,40 @@
 </ul>
 <a id="more"></a>
 
-<h1 id="中级SQL-2-–-关联子查询-与-Window函数"><a href="#中级SQL-2-–-关联子查询-与-Window函数" class="headerlink" title="中级SQL(2) – 关联子查询 与 Window函数"></a>中级SQL(2) – 关联子查询 与 Window函数</h1><h2 id="关联子查询-Correlated-subqueries"><a href="#关联子查询-Correlated-subqueries" class="headerlink" title="关联子查询 Correlated subqueries"></a>关联子查询 Correlated subqueries</h2><p>关联子查询是<strong>引用主查询中一列或多列的子查询</strong>。 关联子查询取决于要运行的主查询中的信息，因此<strong>不能单独执行</strong>。</p>
+<h1 id="中级SQL-2-–-关联子查询、CTE-与-Window函数"><a href="#中级SQL-2-–-关联子查询、CTE-与-Window函数" class="headerlink" title="中级SQL(2) – 关联子查询、CTE 与 Window函数"></a>中级SQL(2) – 关联子查询、CTE 与 Window函数</h1><h2 id="关联子查询-Correlated-subqueries"><a href="#关联子查询-Correlated-subqueries" class="headerlink" title="关联子查询 Correlated subqueries"></a>关联子查询 Correlated subqueries</h2><p>关联子查询是<strong>引用主查询中一列或多列的子查询</strong>。 关联子查询取决于要运行的主查询中的信息，因此<strong>不能单独执行</strong>。</p>
 <p>在SQL中，每检索到一行数据，就会对关联的子查询进行一次评估，该过程比简单的子查询花费更多的算力和时间。</p>
 <p>SQL语法的执行顺序：</p>
 <blockquote>
 <p>from ==&gt; join ==&gt; on ==&gt; where ==&gt; group by ==&gt; avg,sum…. ==&gt; having ==&gt; select ==&gt; distinct ==&gt; order by ==&gt; limit </p>
 </blockquote>
 <hr>
-<p><strong>关联子查询执行逻辑：</strong></p>
+<p><strong>关联子查询执行逻辑（与普通查询是不同的！！！）：</strong></p>
 <ol>
-<li>引用外部查询（就是外层查询）的一列或多列；</li>
-<li>将外部查询的每一行都传递给内部查询（也就是子查询），子查询依次读取传递过来的每一行的值，并将其使用到子查询上，直到外部查询的所有行都处理完为止，然后返回子查询的结果</li>
+<li>先从主查询的表中各个列取出第一个值（即取出一行记录），进入子查询中，得到子查询结果，然后返回父查询，判断父查询的where子句条件，则返回整个语句的第1条结果。</li>
+<li>重复上述操作，直到所有主查询中的表中待查询列记录取完为止。得出整个语句的结果集，就是最后的答案。</li>
 </ol>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/41844742" target="_blank" rel="noopener">知乎-关联子查询</a></p>
 <hr>
 <h3 id="每一个国家的平均进球数是多少"><a href="#每一个国家的平均进球数是多少" class="headerlink" title="每一个国家的平均进球数是多少"></a>每一个国家的平均进球数是多少</h3><p>如果用关联子查询写的话可以这么写</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	c.name <span class="keyword">AS</span> country,</span><br><span class="line">	(<span class="keyword">SELECT</span> </span><br><span class="line">   		<span class="keyword">AVG</span>(home_goal+away_goal)</span><br><span class="line">   <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> m</span><br><span class="line">   <span class="keyword">WHERE</span> m.country_id = c.id)</span><br><span class="line">   		<span class="keyword">AS</span> avg_goals</span><br><span class="line"><span class="keyword">FROM</span> country <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
 
-<h3 id="查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><a href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛" class="headerlink" title="查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛"></a>查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="comment">-- Select country ID, date, home, and away goals from match</span></span><br><span class="line">	main.country_id,</span><br><span class="line">    main.date,</span><br><span class="line">    main.home_goal, </span><br><span class="line">    main.away_goal</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> <span class="keyword">main</span></span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">	<span class="comment">-- Filter the main query by the subquery</span></span><br><span class="line">	(home_goal + away_goal) &gt; </span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>((sub.home_goal + sub.away_goal) * <span class="number">3</span>) <span class="comment">/* 平均进球数的3倍 */</span></span><br><span class="line">         <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> sub</span><br><span class="line">         <span class="comment">-- 在where中把主查询与子查询连接起来</span></span><br><span class="line">         <span class="keyword">WHERE</span> main.country_id = sub.country_id);</span><br></pre></td></tr></table></figure>
+<h3 id="查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><a href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛" class="headerlink" title="查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛"></a>查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="comment">-- Select country ID, date, home, and away goals from match</span></span><br><span class="line">	  main.country_id,</span><br><span class="line">    main.date,</span><br><span class="line">    main.home_goal, </span><br><span class="line">    main.away_goal</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> <span class="keyword">main</span></span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">	<span class="comment">-- Filter the main query by the subquery</span></span><br><span class="line">	(home_goal + away_goal) &gt; </span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>((sub.home_goal + sub.away_goal) * <span class="number">3</span>) <span class="comment">/* 平均进球数的3倍 */</span></span><br><span class="line">         <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> sub</span><br><span class="line">         <span class="comment">-- 在where中把主查询与子查询连接起来，不加这句是没法做到外部查询与子查询一行对一行的</span></span><br><span class="line">         <span class="keyword">WHERE</span> main.country_id = sub.country_id);</span><br></pre></td></tr></table></figure>
 
-<p>运行顺序：</p>
+<p><strong>运行逻辑：</strong></p>
 <ol>
-<li>FROM语句：导入main表；</li>
-<li>WHERE语句：</li>
+<li>外部查询main.country_id,main.date,main.home_goal, main.away_goal，第一行的值都传给where后的子查询；</li>
+<li>得到子查询结果，然后返回外部查询，到where语句判断外部查询的条件；</li>
+<li>判断通过，返回整个语句的第1条结果；</li>
+<li>重复以上步骤</li>
 </ol>
+<h2 id="CTE-Common-Table-Expression-公用表表达式"><a href="#CTE-Common-Table-Expression-公用表表达式" class="headerlink" title="CTE(Common Table Expression) 公用表表达式"></a>CTE(Common Table Expression) 公用表表达式</h2><p>CTE(Common Table Expression) 公用表表达式，它是在单个语句的执行范围内定义的临时结果集（<strong>片段</strong>），只在查询期间有效。它可以自引用，也可在同一查询中多次引用，实现了代码段的重复利用。</p>
+<h3 id="用CTE生成国家-地区列表以及每个国家-地区中总进球数超过10个的比赛数量"><a href="#用CTE生成国家-地区列表以及每个国家-地区中总进球数超过10个的比赛数量" class="headerlink" title="用CTE生成国家/地区列表以及每个国家/地区中总进球数超过10个的比赛数量"></a>用CTE生成国家/地区列表以及每个国家/地区中总进球数超过10个的比赛数量</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 做出一个包含进球数大于等于10的国家以及对应的比赛表</span></span><br><span class="line"><span class="comment">可以供后面的所有查询利用 </span></span><br><span class="line"><span class="comment">此片段（临时表）的名称是 match_list */</span></span><br><span class="line"><span class="keyword">WITH</span> match_list <span class="keyword">AS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">  		country_id, </span><br><span class="line">  		<span class="keyword">id</span></span><br><span class="line">    <span class="keyword">FROM</span> <span class="keyword">match</span></span><br><span class="line">    <span class="keyword">WHERE</span> (home_goal + away_goal) &gt;= <span class="number">10</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">-- Select league and count of matches from the CTE</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    l.name <span class="keyword">AS</span> league,</span><br><span class="line">    <span class="keyword">COUNT</span>(match_list.id) <span class="keyword">AS</span> matches</span><br><span class="line"><span class="keyword">FROM</span> league <span class="keyword">AS</span> l</span><br><span class="line"><span class="comment">-- Join the CTE to the league table</span></span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> match_list <span class="keyword">ON</span> l.id = match_list.country_id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> l.name;</span><br></pre></td></tr></table></figure>
+
+<p>![Screen Shot 2019-10-22 at 17.27.44](/Users/yupng/Documents/githubhexo/source/_posts/Screen Shot 2019-10-22 at 17.27.44.png)</p>
+<p>![Screen Shot 2019-10-22 at 17.28.26](/Users/yupng/Documents/githubhexo/source/_posts/Screen Shot 2019-10-22 at 17.28.26.png)</p>
+<p>以上是两张查询表。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><img src="/Users/yupng/Documents/githubhexo/source/_posts/Screen Shot 2019-10-22 at 17.45.02.png" alt="Screen Shot 2019-10-22 at 17.45.02" style="zoom:60%;">
+
 
     </div>
 
@@ -443,7 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL-2-–-关联子查询-与-Window函数"><span class="nav-number">1.</span> <span class="nav-text">中级SQL(2) – 关联子查询 与 Window函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关联子查询-Correlated-subqueries"><span class="nav-number">1.1.</span> <span class="nav-text">关联子查询 Correlated subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#每一个国家的平均进球数是多少"><span class="nav-number">1.1.1.</span> <span class="nav-text">每一个国家的平均进球数是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL-2-–-关联子查询、CTE-与-Window函数"><span class="nav-number">1.</span> <span class="nav-text">中级SQL(2) – 关联子查询、CTE 与 Window函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关联子查询-Correlated-subqueries"><span class="nav-number">1.1.</span> <span class="nav-text">关联子查询 Correlated subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#每一个国家的平均进球数是多少"><span class="nav-number">1.1.1.</span> <span class="nav-text">每一个国家的平均进球数是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTE-Common-Table-Expression-公用表表达式"><span class="nav-number">1.2.</span> <span class="nav-text">CTE(Common Table Expression) 公用表表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用CTE生成国家-地区列表以及每个国家-地区中总进球数超过10个的比赛数量"><span class="nav-number">1.2.1.</span> <span class="nav-text">用CTE生成国家/地区列表以及每个国家/地区中总进球数超过10个的比赛数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.2.2.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
