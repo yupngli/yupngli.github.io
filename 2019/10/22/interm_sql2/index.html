@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
-<meta name="keywords" content="HEXO">
+  <meta name="description" content="内容包括了：  关联子查询 Window函数">
+<meta name="keywords" content="SQL,Datacamp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO新博文发布操作指南">
-<meta property="og:url" content="http://yoursite.com/2019/07/29/hello-world/index.html">
+<meta property="og:title" content="中级SQL（2） -- 关联子查询 与 Window函数">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/interm_sql2/index.html">
 <meta property="og:site_name" content="YUPNG POST">
-<meta property="og:description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
+<meta property="og:description" content="内容包括了：  关联子查询 Window函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T05:30:58.461Z">
+<meta property="og:updated_time" content="2019-10-22T08:00:33.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO新博文发布操作指南">
-<meta name="twitter:description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
-  <link rel="canonical" href="http://yoursite.com/2019/07/29/hello-world/">
+<meta name="twitter:title" content="中级SQL（2） -- 关联子查询 与 Window函数">
+<meta name="twitter:description" content="内容包括了：  关联子查询 Window函数">
+  <link rel="canonical" href="http://yoursite.com/2019/10/22/interm_sql2/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>HEXO新博文发布操作指南 | YUPNG POST</title>
+  <title>中级SQL（2） -- 关联子查询 与 Window函数 | YUPNG POST</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/interm_sql2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yupeng Li">
@@ -279,7 +279,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            HEXO新博文发布操作指南
+            中级SQL（2） -- 关联子查询 与 Window函数
             
 
           
@@ -296,19 +296,11 @@
                 
               
 
-              <time title="创建时间：2019-07-29 06:43:36" itemprop="dateCreated datePublished" datetime="2019-07-29T06:43:36+08:00">2019-07-29</time>
+              <time title="创建时间：2019-10-22 15:21:48 / 修改时间：16:00:33" itemprop="dateCreated datePublished" datetime="2019-10-22T15:21:48+08:00">2019-10-22</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-22 13:30:58" itemprop="dateModified" datetime="2019-10-22T13:30:58+08:00">2019-10-22</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -318,8 +310,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HEXO/" itemprop="url" rel="index">
-                    <span itemprop="name">HEXO</span>
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
                   </a>
                 </span>
 
@@ -340,21 +332,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="操作指南"><a href="#操作指南" class="headerlink" title="操作指南"></a>操作指南</h2><p>为了防止自己忘记，所以在此记录一下标准操作</p>
+        <p>内容包括了：</p>
+<ul>
+<li>关联子查询</li>
+<li>Window函数</li>
+</ul>
 <a id="more"></a>
 
-<h3 id="创建新博文"><a href="#创建新博文" class="headerlink" title="创建新博文"></a>创建新博文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h1 id="中级SQL-2-–-关联子查询-与-Window函数"><a href="#中级SQL-2-–-关联子查询-与-Window函数" class="headerlink" title="中级SQL(2) – 关联子查询 与 Window函数"></a>中级SQL(2) – 关联子查询 与 Window函数</h1><h2 id="关联子查询-Correlated-subqueries"><a href="#关联子查询-Correlated-subqueries" class="headerlink" title="关联子查询 Correlated subqueries"></a>关联子查询 Correlated subqueries</h2><p>关联子查询是<strong>引用主查询中一列或多列的子查询</strong>。 关联子查询取决于要运行的主查询中的信息，因此<strong>不能单独执行</strong>。</p>
+<p>在SQL中，每检索到一行数据，就会对关联的子查询进行一次评估，该过程比简单的子查询花费更多的算力和时间。</p>
+<p>SQL语法的执行顺序：</p>
+<blockquote>
+<p>from ==&gt; join ==&gt; on ==&gt; where ==&gt; group by ==&gt; avg,sum…. ==&gt; having ==&gt; select ==&gt; distinct ==&gt; order by ==&gt; limit </p>
+</blockquote>
+<hr>
+<p><strong>关联子查询执行逻辑：</strong></p>
+<ol>
+<li>引用外部查询（就是外层查询）的一列或多列；</li>
+<li>将外部查询的每一行都传递给内部查询（也就是子查询），子查询依次读取传递过来的每一行的值，并将其使用到子查询上，直到外部查询的所有行都处理完为止，然后返回子查询的结果</li>
+</ol>
+<hr>
+<h3 id="每一个国家的平均进球数是多少"><a href="#每一个国家的平均进球数是多少" class="headerlink" title="每一个国家的平均进球数是多少"></a>每一个国家的平均进球数是多少</h3><p>如果用关联子查询写的话可以这么写</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	c.name <span class="keyword">AS</span> country,</span><br><span class="line">	(<span class="keyword">SELECT</span> </span><br><span class="line">   		<span class="keyword">AVG</span>(home_goal+away_goal)</span><br><span class="line">   <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> m</span><br><span class="line">   <span class="keyword">WHERE</span> m.country_id = c.id)</span><br><span class="line">   		<span class="keyword">AS</span> avg_goals</span><br><span class="line"><span class="keyword">FROM</span> country <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><a href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛" class="headerlink" title="查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛"></a>查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="comment">-- Select country ID, date, home, and away goals from match</span></span><br><span class="line">	main.country_id,</span><br><span class="line">    main.date,</span><br><span class="line">    main.home_goal, </span><br><span class="line">    main.away_goal</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> <span class="keyword">main</span></span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">	<span class="comment">-- Filter the main query by the subquery</span></span><br><span class="line">	(home_goal + away_goal) &gt; </span><br><span class="line">        (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>((sub.home_goal + sub.away_goal) * <span class="number">3</span>) <span class="comment">/* 平均进球数的3倍 */</span></span><br><span class="line">         <span class="keyword">FROM</span> <span class="keyword">match</span> <span class="keyword">AS</span> sub</span><br><span class="line">         <span class="comment">-- 在where中把主查询与子查询连接起来</span></span><br><span class="line">         <span class="keyword">WHERE</span> main.country_id = sub.country_id);</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到GITHUB上"><a href="#部署到GITHUB上" class="headerlink" title="部署到GITHUB上"></a>部署到GITHUB上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>运行顺序：</p>
+<ol>
+<li>FROM语句：导入main表；</li>
+<li>WHERE语句：</li>
+</ol>
 
     </div>
 
@@ -370,7 +377,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/HEXO/" rel="tag"># HEXO</a>
+              <a href="/tags/SQL/" rel="tag"># SQL</a>
+            
+              <a href="/tags/Datacamp/" rel="tag"># Datacamp</a>
             
           </div>
         
@@ -380,15 +389,15 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/10/22/interm_sql/" rel="next" title="中级SQL（1） -- CASE WHEN 与 子查询">
+                  <i class="fa fa-chevron-left"></i> 中级SQL（1） -- CASE WHEN 与 子查询
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/22/interm_sql/" rel="prev" title="中级SQL（1） -- CASE WHEN 与 子查询">
-                  中级SQL（1） -- CASE WHEN 与 子查询 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -434,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作指南"><span class="nav-number">1.</span> <span class="nav-text">操作指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新博文"><span class="nav-number">1.1.</span> <span class="nav-text">创建新博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行服务器"><span class="nav-number">1.2.</span> <span class="nav-text">运行服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">1.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到GITHUB上"><span class="nav-number">1.4.</span> <span class="nav-text">部署到GITHUB上</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL-2-–-关联子查询-与-Window函数"><span class="nav-number">1.</span> <span class="nav-text">中级SQL(2) – 关联子查询 与 Window函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关联子查询-Correlated-subqueries"><span class="nav-number">1.1.</span> <span class="nav-text">关联子查询 Correlated subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#每一个国家的平均进球数是多少"><span class="nav-number">1.1.1.</span> <span class="nav-text">每一个国家的平均进球数是多少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找每个国家-地区进球数异常高的比赛-高于平均进球数的3倍的比赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">查找每个国家/地区进球数异常高的比赛 - 高于平均进球数的3倍的比赛</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
