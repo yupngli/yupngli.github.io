@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="YUPNG POST">
 <meta property="og:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T06:20:42.253Z">
+<meta property="og:updated_time" content="2019-10-22T06:24:41.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中级SQL学习笔记">
 <meta name="twitter:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
@@ -296,7 +296,7 @@
                 
               
 
-              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：14:20:42" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
+              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：14:24:41" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
             </span>
           
             
@@ -334,6 +334,9 @@
       
         <h1 id="中级SQL"><a href="#中级SQL" class="headerlink" title="中级SQL"></a>中级SQL</h1><p>关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。</p>
 <a id="more"></a>
+
+<p><strong>注意：</strong>在SQL里面可以这么使用多行批注：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这里是多行批注</span></span><br><span class="line"><span class="comment">这里是多行批注 */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> TABLE1</span><br></pre></td></tr></table></figure>
 
 <h2 id="CASE-WHEN的使用技巧"><a href="#CASE-WHEN的使用技巧" class="headerlink" title="CASE WHEN的使用技巧"></a>CASE WHEN的使用技巧</h2><p>主要是把CASE WHEN 写在聚集函数里</p>
 <h3 id="统计2012-2013赛季每个国家共举办了多少场球赛"><a href="#统计2012-2013赛季每个国家共举办了多少场球赛" class="headerlink" title="统计2012-2013赛季每个国家共举办了多少场球赛"></a>统计2012-2013赛季每个国家共举办了多少场球赛</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	c.name <span class="keyword">AS</span> country,</span><br><span class="line">    <span class="comment">-- Count games from the 2012/2013 season</span></span><br><span class="line">	<span class="keyword">COUNT</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> m.season = <span class="string">'2012/2013'</span> </span><br><span class="line">        	<span class="keyword">THEN</span> m.id <span class="keyword">ELSE</span> <span class="literal">NULL</span> <span class="keyword">END</span>) <span class="keyword">AS</span> matches_2012_2013</span><br><span class="line"><span class="keyword">FROM</span> country <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> <span class="keyword">match</span> <span class="keyword">AS</span> m</span><br><span class="line"><span class="keyword">ON</span> c.id = m.country_id</span><br><span class="line"><span class="comment">-- Group by country name alias</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
