@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="YUPNG POST">
 <meta property="og:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T05:25:53.430Z">
+<meta property="og:updated_time" content="2019-10-22T05:31:02.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中级SQL学习笔记">
 <meta name="twitter:description" content="中级SQL关于如何操纵，转换和充分利用数据的一系列教程，前提基础是充分掌握了SQL的聚合以及表联结。本中级教程包括一些必要的、关键函数，这些函数可以对关系数据库中的信息进行整理，过滤和分类，扩展SQL工具包并回答复杂的问题。 内容包括了：CASE语句的灵活用法、子查询和Window函数的强大用法。同时使用欧洲足球数据库发现有关足球的一些有趣事实。">
@@ -296,7 +296,7 @@
                 
               
 
-              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：13:25:53" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
+              <time title="创建时间：2019-10-22 12:41:10 / 修改时间：13:31:02" itemprop="dateCreated datePublished" datetime="2019-10-22T12:41:10+08:00">2019-10-22</time>
             </span>
           
             
@@ -353,7 +353,14 @@
 <h3 id="巧妙利用AVG-函数检查每个赛季的平局百分比"><a href="#巧妙利用AVG-函数检查每个赛季的平局百分比" class="headerlink" title="巧妙利用AVG()函数检查每个赛季的平局百分比"></a><strong>巧妙利用AVG()函数</strong>检查每个赛季的平局百分比</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	c.name <span class="keyword">AS</span> country,</span><br><span class="line">    <span class="comment">-- Calculate the percentage of tied games in each season</span></span><br><span class="line">	<span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> m.season=<span class="string">'2013/2014'</span> <span class="keyword">AND</span> m.home_goal = m.away_goal <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">			<span class="keyword">WHEN</span> m.season=<span class="string">'2013/2014'</span> <span class="keyword">AND</span> m.home_goal &lt;&gt; m.away_goal <span class="keyword">THEN</span> <span class="number">0</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> ties_2013_2014,</span><br><span class="line">	<span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> m.season=<span class="string">'2014/2015'</span> <span class="keyword">AND</span> m.home_goal = m.away_goal <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">			<span class="keyword">WHEN</span> m.season=<span class="string">'2014/2015'</span> <span class="keyword">AND</span> m.home_goal &lt;&gt; m.away_goal <span class="keyword">THEN</span> <span class="number">0</span></span><br><span class="line">			<span class="keyword">END</span>) <span class="keyword">AS</span> ties_2014_2015</span><br><span class="line"><span class="keyword">FROM</span> country <span class="keyword">AS</span> c</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> matches <span class="keyword">AS</span> m</span><br><span class="line"><span class="keyword">ON</span> c.id = m.country_id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> country;</span><br></pre></td></tr></table></figure>
 
 <p>注意，<code>ROUND(字段,2)</code>可以把对应字段的小数限制到两位。</p>
-<h2 id="巧用子查询（Subqueries）"><a href="#巧用子查询（Subqueries）" class="headerlink" title="巧用子查询（Subqueries）"></a>巧用子查询（Subqueries）</h2>
+<h2 id="巧用子查询（Subqueries）"><a href="#巧用子查询（Subqueries）" class="headerlink" title="巧用子查询（Subqueries）"></a>巧用子查询（Subqueries）</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>子查询可以是下面查询语句的一部分：</p>
+<ul>
+<li>SELECT</li>
+<li>FROM</li>
+<li>WHERE</li>
+<li>GROUP BY</li>
+</ul>
+
     </div>
 
     
@@ -434,7 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL"><span class="nav-number">1.</span> <span class="nav-text">中级SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CASE-WHEN的使用技巧"><span class="nav-number">1.1.</span> <span class="nav-text">CASE WHEN的使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计2012-2013赛季每个国家共举办了多少场球赛"><span class="nav-number">1.1.1.</span> <span class="nav-text">统计2012-2013赛季每个国家共举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用国家-地区和比赛表来确定2012-2013、2013-2014和2014-2015赛季每个国家的主队（home-team）赢得比赛的总场数"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用国家/地区和比赛表来确定2012 / 2013、2013 / 2014和2014/2015赛季每个国家的主队（home_team）赢得比赛的总场数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巧妙利用AVG-函数检查每个赛季的平局百分比"><span class="nav-number">1.1.4.</span> <span class="nav-text">巧妙利用AVG()函数检查每个赛季的平局百分比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巧用子查询（Subqueries）"><span class="nav-number">1.2.</span> <span class="nav-text">巧用子查询（Subqueries）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中级SQL"><span class="nav-number">1.</span> <span class="nav-text">中级SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CASE-WHEN的使用技巧"><span class="nav-number">1.1.</span> <span class="nav-text">CASE WHEN的使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计2012-2013赛季每个国家共举办了多少场球赛"><span class="nav-number">1.1.1.</span> <span class="nav-text">统计2012-2013赛季每个国家共举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛"><span class="nav-number">1.1.2.</span> <span class="nav-text">分别统计2012-2013，2013-2014、2014-2015三个赛季每个国家举办了多少场球赛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用国家-地区和比赛表来确定2012-2013、2013-2014和2014-2015赛季每个国家的主队（home-team）赢得比赛的总场数"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用国家/地区和比赛表来确定2012 / 2013、2013 / 2014和2014/2015赛季每个国家的主队（home_team）赢得比赛的总场数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巧妙利用AVG-函数检查每个赛季的平局百分比"><span class="nav-number">1.1.4.</span> <span class="nav-text">巧妙利用AVG()函数检查每个赛季的平局百分比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巧用子查询（Subqueries）"><span class="nav-number">1.2.</span> <span class="nav-text">巧用子查询（Subqueries）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
