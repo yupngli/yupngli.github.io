@@ -292,7 +292,7 @@
                 
               
 
-              <time title="创建时间：2019-10-31 15:42:30 / 修改时间：16:19:17" itemprop="dateCreated datePublished" datetime="2019-10-31T15:42:30+08:00">2019-10-31</time>
+              <time title="创建时间：2019-10-31 15:42:30 / 修改时间：16:21:20" itemprop="dateCreated datePublished" datetime="2019-10-31T15:42:30+08:00">2019-10-31</time>
             </span>
           
             
@@ -329,83 +329,20 @@
 
       
           <h1 id="SAS-入门"><a href="#SAS-入门" class="headerlink" title="SAS 入门"></a>SAS 入门</h1><h2 id="SAS语言概览"><a href="#SAS语言概览" class="headerlink" title="SAS语言概览"></a>SAS语言概览</h2><ul>
-<li><p>SAS每一条语句都是分号结尾</p>
-</li>
-<li><p>SAS不分大小写</p>
-</li>
-<li><p>注意缩进</p>
-</li>
-<li><p>SAS的注释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*这里是注释，记得以分号结尾，这种注释可以放首行;</span><br><span class="line"></span><br><span class="line">/*内容，这种注释不要放首行*/</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>SAS每一条语句都是分号结尾</li>
+<li>SAS不分大小写</li>
+<li>注意缩进</li>
+<li>SAS的注释：</li>
 </ul>
-<h2 id="SAS数据集"><a href="#SAS数据集" class="headerlink" title="SAS数据集"></a>SAS数据集</h2><ul>
-<li><p>SAS类似关系数据库，分为表、列（<strong>变量</strong>）、行（<strong>观测</strong>）</p>
-</li>
-<li><p><strong>数据类型</strong>只有两种：</p>
-<ul>
-<li>字符型：数字、字母、特殊符号皆可，最长为32767个字符长度。如果是邮政编码建议存储为字符型，因为对邮编进行计算没有意义</li>
-<li>数值型：可进行运算<blockquote>
-<p><strong>注意：</strong>数据缺失值用 <code>.</code> 表示</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>变量命名规则：</p>
-<ul>
-<li><p>变量名不超过32字符</p>
-</li>
-<li><p>名称必须以字母或者 <code>_</code> 开始</p>
-</li>
-<li><p>名称仅可包含字母、数字、 <code>_</code> </p>
-</li>
-<li><p>大小写不作区分，但是SAS会记住该变量第一次出现时候的大小写</p>
-</li>
-</ul>
-</li>
-<li><p>SAS会存储数据集的相关信息</p>
-</li>
-</ul>
-<h2 id="DATA步与PROC步总览"><a href="#DATA步与PROC步总览" class="headerlink" title="DATA步与PROC步总览"></a>DATA步与PROC步总览</h2><p><strong>牢记</strong></p>
-<blockquote>
-<p>DATA：读取、修改数据</p>
-<p>PROC：分析数据、执行实用功能、打印报表</p>
-</blockquote>
-<p><strong>两个“步”包含的语句</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">DATA</th>
-<th align="center">PROC</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">从外部文件读数据；DO循环；IF-THEN-ELSE判断；其他数值及字符函数</td>
-<td align="center">打印、排序、求平均等、方差分析、画图</td>
-</tr>
-</tbody></table>
-<p><strong>SAS语句碰到下面的会停止运行</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RUN; /*RUN语句会通知SAS去运行本步中，此前所有语句*/</span><br><span class="line">QUIT;</span><br><span class="line">STOP;</span><br><span class="line">ABORT;</span><br></pre></td></tr></table></figure>
-
-<p><strong>DATA步与PROC步具有灵活性</strong></p>
-<p>不一定是DATA步再PROC步，总之非常灵活。并且只含DATA步或者只含PROC步皆可</p>
-<h3 id="DATA步内置循环逻辑"><a href="#DATA步内置循环逻辑" class="headerlink" title="DATA步内置循环逻辑"></a>DATA步内置循环逻辑</h3><blockquote>
-<p>DATA步逐条处理观测，针对每一条观测逐行执行语句</p>
-</blockquote>
-<p><strong>步骤</strong></p>
-<ol>
-<li><strong>SAS读取输入数据集第一条观测</strong></li>
-<li>针对第一条观测，从第一行DATA步语句开始，逐行执行完DATA步语句</li>
-<li>将第一条观测写入输出数据集</li>
-<li><strong>SAS读取输入数据集第二条观测</strong></li>
-<li>针对第二条观测，从第一行DATA步语句开始，逐行执行完DATA步语句</li>
-<li>将第二条观测写入输出数据集</li>
-<li>…</li>
-</ol>
-<p>最后完成所有观测的处理！</p>
-<p>要跳脱出这个因果轮回，可以使用<code>RETAIN</code>语句或者<code>OUTPUT</code>语句打破逐行执行程序的逻辑</p>
-
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/10/31/sas1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
