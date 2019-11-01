@@ -55,20 +55,20 @@
   };
 </script>
 
-  <meta name="description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
+  <meta name="description" content="导入与汇报数据 Use the DATA step to create data tables manually. Import a delimited raw data file using a DATA step without column names. Import a delimited raw data file using PROC IMPORT with column names.">
 <meta name="keywords" content="SAS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAS学习笔记第三章-DATA步">
 <meta property="og:url" content="http://yupngli.github.io/2019/11/01/sas3/index.html">
 <meta property="og:site_name" content="LE-VIA-THAN">
-<meta property="og:description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
+<meta property="og:description" content="导入与汇报数据 Use the DATA step to create data tables manually. Import a delimited raw data file using a DATA step without column names. Import a delimited raw data file using PROC IMPORT with column names.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png">
-<meta property="og:updated_time" content="2019-11-01T04:47:47.904Z">
+<meta property="og:updated_time" content="2019-11-01T04:52:26.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAS学习笔记第三章-DATA步">
-<meta name="twitter:description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
+<meta name="twitter:description" content="导入与汇报数据 Use the DATA step to create data tables manually. Import a delimited raw data file using a DATA step without column names. Import a delimited raw data file using PROC IMPORT with column names.">
 <meta name="twitter:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
   <link rel="canonical" href="http://yupngli.github.io/2019/11/01/sas3/">
 
@@ -301,7 +301,7 @@
                 
               
 
-              <time title="创建时间：2019-11-01 10:07:22 / 修改时间：12:47:47" itemprop="dateCreated datePublished" datetime="2019-11-01T10:07:22+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-01 12:50:22 / 修改时间：12:52:26" itemprop="dateCreated datePublished" datetime="2019-11-01T12:50:22+08:00">2019-11-01</time>
             </span>
           
             
@@ -337,15 +337,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="导入与汇报数据"><a href="#导入与汇报数据" class="headerlink" title="导入与汇报数据"></a>导入与汇报数据</h1><h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="创建数据集的一般语法"><a href="#创建数据集的一般语法" class="headerlink" title="创建数据集的一般语法"></a>创建数据集的一般语法</h3><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png" alt="image-20191101123800778"></p>
+        <h1 id="导入与汇报数据"><a href="#导入与汇报数据" class="headerlink" title="导入与汇报数据"></a>导入与汇报数据</h1><ul>
+<li>Use the DATA step to create data tables manually.</li>
+<li>Import a delimited raw data file using a DATA step without column names.</li>
+<li>Import a delimited raw data file using PROC IMPORT with column names.</li>
+<li>Rename variables using the RENAME statement.</li>
+<li>Identify data table attributes with PROC CONTENTS.</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li>Identify variable levels with PROC SQL.</li>
+<li>Create a default PROC PRINT report.</li>
+<li>Select variables with a VAR statement.</li>
+<li>Select observations with a WHERE statement.</li>
+<li>Subset the data with a WHERE statement.</li>
+<li>Use the LABEL statement to display descriptive column headings.</li>
+<li>Use the FORMAT procedure to create user-defined formats.</li>
+<li>Use the FORMAT statement to apply user-defined formats.</li>
+<li>Apply SAS formats with the FORMAT statement.</li>
+</ul>
+<h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="创建数据集的一般语法"><a href="#创建数据集的一般语法" class="headerlink" title="创建数据集的一般语法"></a>创建数据集的一般语法</h3><p><img src="/2019/11/01/sas3/image-20191101123800778.png" alt="image-20191101123800778"></p>
 <hr>
 <p><strong>字符型变量</strong>要加 <code>$</code> 符号</p>
 <h3 id="指定变量值的长度"><a href="#指定变量值的长度" class="headerlink" title="指定变量值的长度"></a>指定变量值的长度</h3><p>如果超过规定的字符长度，则需要使用下面的语句<code>LENGTH</code>去指定变量的长度：</p>
-<p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png" alt="image-20191101124139448"></p>
+<p><img src="/2019/11/01/sas3/image-20191101124139448.png" alt="image-20191101124139448"></p>
 <blockquote>
 <p><strong>注意：</strong>在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。</p>
 </blockquote>
-<h3 id="创建数据集的示例"><a href="#创建数据集的示例" class="headerlink" title="创建数据集的示例"></a>创建数据集的示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d01*/</span><br><span class="line"></span><br><span class="line">/*Part A*/</span><br><span class="line">data sp4r.example_data;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68</span><br><span class="line">   Bruce Wayne 35 70</span><br><span class="line">   Walter White 51 70</span><br><span class="line">   Henry Hill 65 66</span><br><span class="line">   JeanClaude VanDamme 55 69</span><br><span class="line">;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">/*Part B*/</span><br><span class="line">data sp4r.example_data2;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height @@;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68 Bruce Wayne 35 70 Walter White 51 70</span><br><span class="line">   Henry Hill 65 66 JeanClaude VanDamme 55 69</span><br><span class="line">   ;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<h3 id="创建数据集的示例"><a href="#创建数据集的示例" class="headerlink" title="创建数据集的示例"></a>创建数据集的示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d01*/</span><br><span class="line">/*Part A*/</span><br><span class="line">data sp4r.example_data;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68</span><br><span class="line">   Bruce Wayne 35 70</span><br><span class="line">   Walter White 51 70</span><br><span class="line">   Henry Hill 65 66</span><br><span class="line">   JeanClaude VanDamme 55 69 /*可以见到JeanClaude超过8个字符，所以要指定LENGTH*/</span><br><span class="line">;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">/*Part B*/</span><br><span class="line">data sp4r.example_data2;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height @@;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68 Bruce Wayne 35 70 Walter White 51 70</span><br><span class="line">   Henry Hill 65 66 JeanClaude VanDamme 55 69</span><br><span class="line">   ;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -390,8 +410,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/31/sas1/" rel="next" title="SAS学习笔记第一章-入门">
-                  <i class="fa fa-chevron-left"></i> SAS学习笔记第一章-入门
+                <a href="/2019/11/01/sas2/" rel="next" title="SAS学习笔记第二章-SAS Studio">
+                  <i class="fa fa-chevron-left"></i> SAS学习笔记第二章-SAS Studio
                 </a>
               
             </div>
@@ -399,10 +419,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/01/sas2/" rel="prev" title="SAS学习笔记第二章-SAS Studio">
-                  SAS学习笔记第二章-SAS Studio <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
