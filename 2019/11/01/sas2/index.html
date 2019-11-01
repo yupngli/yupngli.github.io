@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia:300,300italic,400,400italic,700,700italic|Georgia, 'Noto Serif SC':300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="SAS更深入的介绍以及SAS Studio的使用本章目标 Explore SAS Studio. Compare SAS and R. List the components of a SAS program. Define SAS syntax rules. Diagnose and correct a program that contains errors. Discuss the use">
+<meta name="keywords" content="SAS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAS学习笔记第二章-SAS Studio（英文）">
+<meta property="og:url" content="http://yupngli.github.io/2019/11/01/sas2/index.html">
+<meta property="og:site_name" content="LE-VIA-THAN">
+<meta property="og:description" content="SAS更深入的介绍以及SAS Studio的使用本章目标 Explore SAS Studio. Compare SAS and R. List the components of a SAS program. Define SAS syntax rules. Diagnose and correct a program that contains errors. Discuss the use">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101101037762.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101101519339.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101102258200.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101102528339.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101103234282.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101103402381.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101104111683.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101104704317-2576541.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101105527600.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101105755880.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101110009013.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101110105322.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101110344955.png">
+<meta property="og:updated_time" content="2019-11-01T03:06:32.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SAS学习笔记第二章-SAS Studio（英文）">
+<meta name="twitter:description" content="SAS更深入的介绍以及SAS Studio的使用本章目标 Explore SAS Studio. Compare SAS and R. List the components of a SAS program. Define SAS syntax rules. Diagnose and correct a program that contains errors. Discuss the use">
+<meta name="twitter:image" content="http://yupngli.github.io/2019/11/01/sas2/image-20191101101037762.png">
+  <link rel="canonical" href="http://yupngli.github.io/2019/11/01/sas2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>SAS学习笔记第二章-SAS Studio（英文） | LE-VIA-THAN</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LE-VIA-THAN</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">推理就是步伐，学识的增长是道路</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">5</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+      
+    
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yupngli.github.io/2019/11/01/sas2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yupeng  L .">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/index.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LE-VIA-THAN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            SAS学习笔记第二章-SAS Studio（英文）
+            
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-01 10:07:22 / 修改时间：11:06:32" itemprop="dateCreated datePublished" datetime="2019-11-01T10:07:22+08:00">2019-11-01</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SAS/" itemprop="url" rel="index">
+                    <span itemprop="name">SAS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="SAS更深入的介绍以及SAS-Studio的使用"><a href="#SAS更深入的介绍以及SAS-Studio的使用" class="headerlink" title="SAS更深入的介绍以及SAS Studio的使用"></a>SAS更深入的介绍以及SAS Studio的使用</h1><h2 id="本章目标"><a href="#本章目标" class="headerlink" title="本章目标"></a>本章目标</h2><ul>
+<li>Explore SAS Studio.</li>
+<li>Compare SAS and R.</li>
+<li>List the components of a SAS program.</li>
+<li>Define SAS syntax rules.</li>
+<li>Diagnose and correct a program that contains errors.</li>
+<li>Discuss the use and creation of SAS libraries.</li>
+<li>Generate the course data.</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="SAS以及SAS-Studio的“四维”"><a href="#SAS以及SAS-Studio的“四维”" class="headerlink" title="SAS以及SAS Studio的“四维”"></a>SAS以及SAS Studio的“四维”</h2><h3 id="SAS可解决的任务的四个维度"><a href="#SAS可解决的任务的四个维度" class="headerlink" title="SAS可解决的任务的四个维度"></a>SAS可解决的任务的四个维度</h3><p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101101037762.png" alt="image-20191101101037762"></p>
+<h3 id="SAS-Studio的四个维度"><a href="#SAS-Studio的四个维度" class="headerlink" title="SAS Studio的四个维度"></a>SAS Studio的四个维度</h3><p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101101519339.png" alt="image-20191101101519339"></p>
+<ul>
+<li><strong>Base SAS</strong>, which is the foundation of SAS software, a lot of built-in functions that you’ll need</li>
+<li><strong>SAS/ACCESS</strong> for reading in raw data files</li>
+<li><strong>SAS/STAT</strong> for doing some advanced analytic models</li>
+<li><strong>SAS/IML</strong> for doing everything in an interactive matrix language, and a few procedures from the ETS license, which is the time series and forecasting procedures.</li>
+</ul>
+<p>##Explore SAS Studio</p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101102258200.png" alt="image-20191101102258200"></p>
+<p>打开<code>SASHELP</code>下的表<code>CARS</code>，会出现交互的表格界面，操作逻辑很直观：</p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101102528339.png" alt="image-20191101102528339"></p>
+<h3 id="使用过滤器筛选记录"><a href="#使用过滤器筛选记录" class="headerlink" title="使用过滤器筛选记录"></a>使用过滤器筛选记录</h3><p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101103234282.png" alt="image-20191101103234282"></p>
+<p>点击这个会<strong>显示创建当前表格的代码</strong></p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101103402381.png" alt="image-20191101103402381"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PROC SQL;</span><br><span class="line">CREATE TABLE WORK.query AS</span><br><span class="line">SELECT Make , Model , &apos;Type&apos;n , Invoice FROM SASHELP.CARS WHERE Invoice &gt;= 30000;</span><br><span class="line">RUN;</span><br><span class="line">QUIT;</span><br><span class="line"></span><br><span class="line">PROC DATASETS NOLIST NODETAILS;</span><br><span class="line">CONTENTS DATA=WORK.query OUT=WORK.details;</span><br><span class="line">RUN;</span><br><span class="line"></span><br><span class="line">PROC PRINT DATA=WORK.details;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码段语法帮助"><a href="#代码段语法帮助" class="headerlink" title="代码段语法帮助"></a>代码段语法帮助</h3><p>对着代码段，点击右键，点语法帮助，会显示相应的语法提示</p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101104111683.png" alt="image-20191101104111683"></p>
+<h3 id="筛选输出表中要显示的变量"><a href="#筛选输出表中要显示的变量" class="headerlink" title="筛选输出表中要显示的变量"></a>筛选输出表中要显示的变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PROC PRINT DATA=sashelp.cars;</span><br><span class="line">	var  EngineSize Horsepower Invoice;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
+
+<p><strong>或者直接从左边的逻辑库中把要显示的变量拖过来：</strong></p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101104704317-2576541.png" alt="image-20191101104704317"></p>
+<h3 id="保存需要多次调用的代码段Snippets"><a href="#保存需要多次调用的代码段Snippets" class="headerlink" title="保存需要多次调用的代码段Snippets"></a>保存需要多次调用的代码段Snippets</h3><p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101105527600.png" alt="image-20191101105527600"></p>
+<h3 id="使用图形界面分析数据"><a href="#使用图形界面分析数据" class="headerlink" title="使用图形界面分析数据"></a>使用图形界面分析数据</h3><ol>
+<li>导入数据</li>
+</ol>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101105755880.png" alt="image-20191101105755880"></p>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101110009013.png" alt="image-20191101110009013"></p>
+<ol start="2">
+<li>选择要做的分析</li>
+</ol>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101110105322.png" alt="image-20191101110105322"></p>
+<ol start="3">
+<li>代码窗口会自动生成相应代码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> *</span><br><span class="line"> * 任务代码由 SAS Studio 3.8 生成</span><br><span class="line"> *</span><br><span class="line"> * 生成时间: “19/11/1 上午10:59” </span><br><span class="line"> * 生成人员: “sasdemo” </span><br><span class="line"> * 生成服务器: “10.0.2.15” </span><br><span class="line"> * 生成 SAS 平台: “Linux LIN X64 2.6.32-754.6.3.el6.x86_64” </span><br><span class="line"> * 生成 SAS 版本: “9.04.01M6P11072018” </span><br><span class="line"> * 生成浏览器: “Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36” </span><br><span class="line"> * 生成 Web 客户端: “http://localhost:10080/SASStudio/38/main?locale=zh_CN&amp;zone=GMT%252B08%253A00&amp;http%3A%2F%2Flocalhost%3A10080%2FSASStudio%2F38%2F=” </span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">ods noproctitle;</span><br><span class="line"></span><br><span class="line">/*** 分析数值变量 ***/</span><br><span class="line">title &quot;数值变量的描述性统计量&quot;;</span><br><span class="line"></span><br><span class="line">proc means data=SASHELP.CARS n nmiss min mean median max std;</span><br><span class="line">	var Invoice;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">title;</span><br><span class="line"></span><br><span class="line">proc univariate data=SASHELP.CARS noprint;</span><br><span class="line">	histogram Invoice;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>RUN</li>
+</ol>
+<p><img src="//yupngli.github.io/2019/11/01/sas2/image-20191101110344955.png" alt="image-20191101110344955"></p>
+<h2 id="Compare-SAS-and-R"><a href="#Compare-SAS-and-R" class="headerlink" title="Compare SAS and R"></a>Compare SAS and R</h2><h2 id="List-the-components-of-a-SAS-program"><a href="#List-the-components-of-a-SAS-program" class="headerlink" title="List the components of a SAS program"></a>List the components of a SAS program</h2><h2 id="Define-SAS-syntax-rules"><a href="#Define-SAS-syntax-rules" class="headerlink" title="Define SAS syntax rules"></a>Define SAS syntax rules</h2><h2 id="Diagnose-and-correct-a-program-that-contains-errors"><a href="#Diagnose-and-correct-a-program-that-contains-errors" class="headerlink" title="Diagnose and correct a program that contains errors"></a>Diagnose and correct a program that contains errors</h2><h2 id="Discuss-the-use-and-creation-of-SAS-libraries"><a href="#Discuss-the-use-and-creation-of-SAS-libraries" class="headerlink" title="Discuss the use and creation of SAS libraries"></a>Discuss the use and creation of SAS libraries</h2><h2 id="Generate-the-course-data"><a href="#Generate-the-course-data" class="headerlink" title="Generate the course data"></a>Generate the course data</h2>
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Yupeng  L .
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yupngli.github.io/2019/11/01/sas2/" title="SAS学习笔记第二章-SAS Studio（英文）">http://yupngli.github.io/2019/11/01/sas2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/SAS/" rel="tag"># SAS</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/31/sas1/" rel="next" title="SAS学习笔记第一章-入门">
+                  <i class="fa fa-chevron-left"></i> SAS学习笔记第一章-入门
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS更深入的介绍以及SAS-Studio的使用"><span class="nav-number">1.</span> <span class="nav-text">SAS更深入的介绍以及SAS Studio的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本章目标"><span class="nav-number">1.1.</span> <span class="nav-text">本章目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS以及SAS-Studio的“四维”"><span class="nav-number">1.2.</span> <span class="nav-text">SAS以及SAS Studio的“四维”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SAS可解决的任务的四个维度"><span class="nav-number">1.2.1.</span> <span class="nav-text">SAS可解决的任务的四个维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SAS-Studio的四个维度"><span class="nav-number">1.2.2.</span> <span class="nav-text">SAS Studio的四个维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用过滤器筛选记录"><span class="nav-number">1.2.3.</span> <span class="nav-text">使用过滤器筛选记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码段语法帮助"><span class="nav-number">1.2.4.</span> <span class="nav-text">代码段语法帮助</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#筛选输出表中要显示的变量"><span class="nav-number">1.2.5.</span> <span class="nav-text">筛选输出表中要显示的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存需要多次调用的代码段Snippets"><span class="nav-number">1.2.6.</span> <span class="nav-text">保存需要多次调用的代码段Snippets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用图形界面分析数据"><span class="nav-number">1.2.7.</span> <span class="nav-text">使用图形界面分析数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-SAS-and-R"><span class="nav-number">1.3.</span> <span class="nav-text">Compare SAS and R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-the-components-of-a-SAS-program"><span class="nav-number">1.4.</span> <span class="nav-text">List the components of a SAS program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Define-SAS-syntax-rules"><span class="nav-number">1.5.</span> <span class="nav-text">Define SAS syntax rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Diagnose-and-correct-a-program-that-contains-errors"><span class="nav-number">1.6.</span> <span class="nav-text">Diagnose and correct a program that contains errors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Discuss-the-use-and-creation-of-SAS-libraries"><span class="nav-number">1.7.</span> <span class="nav-text">Discuss the use and creation of SAS libraries</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-the-course-data"><span class="nav-number">1.8.</span> <span class="nav-text">Generate the course data</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/index.png"
+      alt="Yupeng  L .">
+  <p class="site-author-name" itemprop="name">Yupeng  L .</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yupeng.lee@outlook.com" title="E-Mail &rarr; mailto:yupeng.lee@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yupeng  L .</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
