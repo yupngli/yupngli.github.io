@@ -55,19 +55,22 @@
   };
 </script>
 
-  <meta name="description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
-<meta name="keywords" content="HEXO">
+  <meta name="description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
+<meta name="keywords" content="SAS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO新博文发布操作指南">
-<meta property="og:url" content="http://yupngli.github.io/2019/07/29/hello-world/index.html">
+<meta property="og:title" content="SAS学习笔记第三章-DATA步">
+<meta property="og:url" content="http://yupngli.github.io/2019/11/01/sas3/index.html">
 <meta property="og:site_name" content="LE-VIA-THAN">
-<meta property="og:description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
+<meta property="og:description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-22T05:30:58.461Z">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png">
+<meta property="og:updated_time" content="2019-11-01T04:47:47.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO新博文发布操作指南">
-<meta name="twitter:description" content="操作指南为了防止自己忘记，所以在此记录一下标准操作">
-  <link rel="canonical" href="http://yupngli.github.io/2019/07/29/hello-world/">
+<meta name="twitter:title" content="SAS学习笔记第三章-DATA步">
+<meta name="twitter:description" content="导入与汇报数据创建数据集创建数据集的一般语法  字符型变量要加 $ 符号 指定变量值的长度如果超过规定的字符长度，则需要使用下面的语句LENGTH去指定变量的长度：   注意：在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。  创建数据集的示例123456789101112131415161718192021">
+<meta name="twitter:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
+  <link rel="canonical" href="http://yupngli.github.io/2019/11/01/sas3/">
 
 
 <script id="page-configurations">
@@ -81,7 +84,7 @@
   };
 </script>
 
-  <title>HEXO新博文发布操作指南 | LE-VIA-THAN</title>
+  <title>SAS学习笔记第三章-DATA步 | LE-VIA-THAN</title>
   
 
 
@@ -267,7 +270,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yupngli.github.io/2019/07/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yupngli.github.io/2019/11/01/sas3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yupeng  L .">
@@ -281,7 +284,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            HEXO新博文发布操作指南
+            SAS学习笔记第三章-DATA步
             
 
           
@@ -298,19 +301,11 @@
                 
               
 
-              <time title="创建时间：2019-07-29 06:43:36" itemprop="dateCreated datePublished" datetime="2019-07-29T06:43:36+08:00">2019-07-29</time>
+              <time title="创建时间：2019-11-01 10:07:22 / 修改时间：12:47:47" itemprop="dateCreated datePublished" datetime="2019-11-01T10:07:22+08:00">2019-11-01</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-22 13:30:58" itemprop="dateModified" datetime="2019-10-22T13:30:58+08:00">2019-10-22</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -320,8 +315,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HEXO/" itemprop="url" rel="index">
-                    <span itemprop="name">HEXO</span>
+                  <a href="/categories/SAS/" itemprop="url" rel="index">
+                    <span itemprop="name">SAS</span>
                   </a>
                 </span>
 
@@ -342,21 +337,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="操作指南"><a href="#操作指南" class="headerlink" title="操作指南"></a>操作指南</h2><p>为了防止自己忘记，所以在此记录一下标准操作</p>
-<a id="more"></a>
+        <h1 id="导入与汇报数据"><a href="#导入与汇报数据" class="headerlink" title="导入与汇报数据"></a>导入与汇报数据</h1><h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="创建数据集的一般语法"><a href="#创建数据集的一般语法" class="headerlink" title="创建数据集的一般语法"></a>创建数据集的一般语法</h3><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png" alt="image-20191101123800778"></p>
+<hr>
+<p><strong>字符型变量</strong>要加 <code>$</code> 符号</p>
+<h3 id="指定变量值的长度"><a href="#指定变量值的长度" class="headerlink" title="指定变量值的长度"></a>指定变量值的长度</h3><p>如果超过规定的字符长度，则需要使用下面的语句<code>LENGTH</code>去指定变量的长度：</p>
+<p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png" alt="image-20191101124139448"></p>
+<blockquote>
+<p><strong>注意：</strong>在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。</p>
+</blockquote>
+<h3 id="创建数据集的示例"><a href="#创建数据集的示例" class="headerlink" title="创建数据集的示例"></a>创建数据集的示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d01*/</span><br><span class="line"></span><br><span class="line">/*Part A*/</span><br><span class="line">data sp4r.example_data;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68</span><br><span class="line">   Bruce Wayne 35 70</span><br><span class="line">   Walter White 51 70</span><br><span class="line">   Henry Hill 65 66</span><br><span class="line">   JeanClaude VanDamme 55 69</span><br><span class="line">;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">/*Part B*/</span><br><span class="line">data sp4r.example_data2;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   input First_Name $ Last_Name $ age height @@;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan Bakerman 27 68 Bruce Wayne 35 70 Walter White 51 70</span><br><span class="line">   Henry Hill 65 66 JeanClaude VanDamme 55 69</span><br><span class="line">   ;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
 
-<h3 id="创建新博文"><a href="#创建新博文" class="headerlink" title="创建新博文"></a>创建新博文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="部署到GITHUB上"><a href="#部署到GITHUB上" class="headerlink" title="部署到GITHUB上"></a>部署到GITHUB上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
     </div>
 
@@ -374,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yupngli.github.io/2019/07/29/hello-world/" title="HEXO新博文发布操作指南">http://yupngli.github.io/2019/07/29/hello-world/</a>
+    <a href="http://yupngli.github.io/2019/11/01/sas3/" title="SAS学习笔记第三章-DATA步">http://yupngli.github.io/2019/11/01/sas3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -390,7 +380,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/HEXO/" rel="tag"># HEXO</a>
+              <a href="/tags/SAS/" rel="tag"># SAS</a>
             
           </div>
         
@@ -400,14 +390,18 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/10/31/sas1/" rel="next" title="SAS学习笔记第一章-入门">
+                  <i class="fa fa-chevron-left"></i> SAS学习笔记第一章-入门
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/22/interm-sql/" rel="prev" title="中级SQL（1） -- CASE WHEN 与 子查询">
-                  中级SQL（1） -- CASE WHEN 与 子查询 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/01/sas2/" rel="prev" title="SAS学习笔记第二章-SAS Studio">
+                  SAS学习笔记第二章-SAS Studio <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -454,7 +448,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作指南"><span class="nav-number">1.</span> <span class="nav-text">操作指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新博文"><span class="nav-number">1.1.</span> <span class="nav-text">创建新博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行服务器"><span class="nav-number">1.2.</span> <span class="nav-text">运行服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件"><span class="nav-number">1.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到GITHUB上"><span class="nav-number">1.4.</span> <span class="nav-text">部署到GITHUB上</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导入与汇报数据"><span class="nav-number">1.</span> <span class="nav-text">导入与汇报数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据集"><span class="nav-number">1.1.</span> <span class="nav-text">创建数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的一般语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建数据集的一般语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定变量值的长度"><span class="nav-number">1.1.2.</span> <span class="nav-text">指定变量值的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的示例"><span class="nav-number">1.1.3.</span> <span class="nav-text">创建数据集的示例</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
