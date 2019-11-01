@@ -55,13 +55,13 @@
   };
 </script>
 
-  <meta name="description" content="导入与汇报数据 创建数据集 导入数据集 Enhanced Reporting">
+  <meta name="description" content="导入与汇报数据 创建数据集 导入数据集 汇报数据 增强型汇报">
 <meta name="keywords" content="SAS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SAS学习笔记第三章-DATA步">
+<meta property="og:title" content="SAS学习笔记第三章-导入与汇报数据">
 <meta property="og:url" content="http://yupngli.github.io/2019/11/01/sas3/index.html">
 <meta property="og:site_name" content="LE-VIA-THAN">
-<meta property="og:description" content="导入与汇报数据 创建数据集 导入数据集 Enhanced Reporting">
+<meta property="og:description" content="导入与汇报数据 创建数据集 导入数据集 汇报数据 增强型汇报">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png">
@@ -70,13 +70,28 @@
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101135837886.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101140141191.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101140535801.png">
-<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101140851902.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101141823326.png">
 <meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101141850333.png">
-<meta property="og:updated_time" content="2019-11-01T09:14:52.395Z">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101140851902.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101171752722.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101173420989.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101173613622.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101173737704.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101174447784.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101174555561.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101180139209.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101180508423.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101180654295.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101180814895.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101181055404.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101181237710.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101181420864.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101181708600.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101181801770.png">
+<meta property="og:updated_time" content="2019-11-01T10:19:42.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SAS学习笔记第三章-DATA步">
-<meta name="twitter:description" content="导入与汇报数据 创建数据集 导入数据集 Enhanced Reporting">
+<meta name="twitter:title" content="SAS学习笔记第三章-导入与汇报数据">
+<meta name="twitter:description" content="导入与汇报数据 创建数据集 导入数据集 汇报数据 增强型汇报">
 <meta name="twitter:image" content="http://yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png">
   <link rel="canonical" href="http://yupngli.github.io/2019/11/01/sas3/">
 
@@ -92,7 +107,7 @@
   };
 </script>
 
-  <title>SAS学习笔记第三章-DATA步 | LE-VIA-THAN</title>
+  <title>SAS学习笔记第三章-导入与汇报数据 | LE-VIA-THAN</title>
   
 
 
@@ -292,7 +307,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            SAS学习笔记第三章-DATA步
+            SAS学习笔记第三章-导入与汇报数据
             
 
           
@@ -309,7 +324,7 @@
                 
               
 
-              <time title="创建时间：2019-11-01 12:50:22 / 修改时间：17:14:52" itemprop="dateCreated datePublished" datetime="2019-11-01T12:50:22+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-01 12:50:22 / 修改时间：18:19:42" itemprop="dateCreated datePublished" datetime="2019-11-01T12:50:22+08:00">2019-11-01</time>
             </span>
           
             
@@ -348,15 +363,16 @@
         <h1 id="导入与汇报数据"><a href="#导入与汇报数据" class="headerlink" title="导入与汇报数据"></a>导入与汇报数据</h1><ul>
 <li>创建数据集</li>
 <li>导入数据集</li>
-<li>Enhanced Reporting</li>
+<li>汇报数据</li>
+<li>增强型汇报</li>
 </ul>
 <a id="more"></a>
 
-<h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="创建数据集的一般语法"><a href="#创建数据集的一般语法" class="headerlink" title="创建数据集的一般语法"></a>创建数据集的一般语法</h3><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101123800778.png" alt="image-20191101123800778"></p>
+<h2 id="创建数据集"><a href="#创建数据集" class="headerlink" title="创建数据集"></a>创建数据集</h2><h3 id="创建数据集的一般语法"><a href="#创建数据集的一般语法" class="headerlink" title="创建数据集的一般语法"></a>创建数据集的一般语法</h3><p><img src="/2019/11/01/sas3/image-20191101123800778.png" alt="image-20191101123800778"></p>
 <hr>
 <p><strong>字符型变量</strong>要加 <code>$</code> 符号</p>
 <h3 id="指定变量值的长度"><a href="#指定变量值的长度" class="headerlink" title="指定变量值的长度"></a>指定变量值的长度</h3><p>如果超过规定的字符长度，则需要使用下面的语句<code>LENGTH</code>去指定变量的长度：</p>
-<p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101124139448.png" alt="image-20191101124139448"></p>
+<p><img src="/2019/11/01/sas3/image-20191101124139448.png" alt="image-20191101124139448"></p>
 <blockquote>
 <p><strong>注意：</strong>在不知道变量值的长度的时候，通常会指定一个较大的值作为upper bound，比如100。但是这个值千万不要太大，不然它会包括一大堆空格。</p>
 </blockquote>
@@ -371,19 +387,38 @@
 <p>就会自动跳到下一行去读下一行的记录了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Henry Hill 65 66</span><br></pre></td></tr></table></figure>
 
-<h4 id="小练习1"><a href="#小练习1" class="headerlink" title="小练习1"></a>小练习1</h4><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101130314966.png" alt="image-20191101130314966"></p>
-<h4 id="小练习2"><a href="#小练习2" class="headerlink" title="小练习2"></a>小练习2</h4><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101130435719.png" alt="image-20191101130435719"></p>
+<h4 id="小练习1"><a href="#小练习1" class="headerlink" title="小练习1"></a>小练习1</h4><p><img src="/2019/11/01/sas3/image-20191101130314966.png" alt="image-20191101130314966"></p>
+<h4 id="小练习2"><a href="#小练习2" class="headerlink" title="小练习2"></a>小练习2</h4><p><img src="/2019/11/01/sas3/image-20191101130435719.png" alt="image-20191101130435719"></p>
 <p><strong>答案</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02e01*/</span><br><span class="line"></span><br><span class="line">libname sp4r &apos;/folders/myfolders/sp4r&apos;;/*将DATA步与涉及的逻辑库建立连接*/</span><br><span class="line"></span><br><span class="line">/*TASK1*/</span><br><span class="line">DATA sp4r.shelter; /*在sp4r逻辑库里创建shelter数据文件*/</span><br><span class="line">INPUT Name $ Age Weight Color $ Cats $;</span><br><span class="line">DATALINES;</span><br><span class="line">Pluto 3 25 Black No</span><br><span class="line">Lizzie 10 43 Tan Yes</span><br><span class="line">Pesci 10 38 Brindle No</span><br><span class="line">;</span><br><span class="line">RUN;</span><br><span class="line"></span><br><span class="line">/*TASK2*/</span><br><span class="line">DATA sp4r.shelter2; /*在sp4r逻辑库里创建shelter2数据文件*/</span><br><span class="line">INPUT Name $ Age Weight Color $ Cats $ @@;</span><br><span class="line">DATALINES;</span><br><span class="line">Pluto 3 25 Black No Lizzie 10 43 Tan Yes Pesci 10 38 Brindle No</span><br><span class="line">;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
 
-<p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101135837886.png" alt="image-20191101135837886"></p>
-<h2 id="导入数据集"><a href="#导入数据集" class="headerlink" title="导入数据集"></a>导入数据集</h2><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101140141191.png" alt="image-20191101140141191"></p>
+<p><img src="/2019/11/01/sas3/image-20191101135837886.png" alt="image-20191101135837886"></p>
+<h2 id="导入数据集"><a href="#导入数据集" class="headerlink" title="导入数据集"></a>导入数据集</h2><p><img src="/2019/11/01/sas3/image-20191101140141191.png" alt="image-20191101140141191"></p>
 <p>导入数据集可以通过<strong>DATA步</strong>和<strong>PROC步</strong>进行</p>
-<h3 id="用DATA步导入数据集"><a href="#用DATA步导入数据集" class="headerlink" title="用DATA步导入数据集"></a>用DATA步导入数据集</h3><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101140535801.png" alt="image-20191101140535801"></p>
+<h3 id="用DATA步导入数据集"><a href="#用DATA步导入数据集" class="headerlink" title="用DATA步导入数据集"></a>用DATA步导入数据集</h3><p><img src="/2019/11/01/sas3/image-20191101140535801.png" alt="image-20191101140535801"></p>
 <p>上面的DLM是数据文件的分隔符，也可以直接将分隔符指定为逗号：<code>dlm=&#39;,&#39;</code></p>
-<h4 id="DATA步导入数据集示例"><a href="#DATA步导入数据集示例" class="headerlink" title="DATA步导入数据集示例"></a>DATA步导入数据集示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d02*/</span><br><span class="line"></span><br><span class="line">/*Import data using a DATA step*/</span><br><span class="line">data sp4r.all_names;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   infile &quot;&amp;path/allnames.csv&quot; dlm=&apos;,&apos;;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<h4 id="导入数据后生成新的数据集"><a href="#导入数据后生成新的数据集" class="headerlink" title="导入数据后生成新的数据集"></a>导入数据后生成新的数据集</h4><p><img src="/2019/11/01/sas3/image-20191101141823326.png" alt="image-20191101141823326"></p>
+<p><strong>DATA</strong>后面是新的数据集名称；</p>
+<p><strong>SET</strong>后面是旧的数据集名称；</p>
+<h4 id="更改数据集的列名"><a href="#更改数据集的列名" class="headerlink" title="更改数据集的列名"></a>更改数据集的列名</h4><p><img src="/2019/11/01/sas3/image-20191101141850333.png" alt="image-20191101141850333"></p>
+<h4 id="DATA步导入数据集示例"><a href="#DATA步导入数据集示例" class="headerlink" title="DATA步导入数据集示例"></a>DATA步导入数据集示例</h4><ol>
+<li><strong>常规方法导入数据</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d02*/</span><br><span class="line"></span><br><span class="line">/*Import data using a DATA step*/</span><br><span class="line">data sp4r.all_names;</span><br><span class="line">   length First_Name $ 25 Last_Name $ 25;</span><br><span class="line">   infile &quot;&amp;path/allnames.csv&quot; dlm=&apos;,&apos;;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
 
-<h3 id="用PROC步导入数据集"><a href="#用PROC步导入数据集" class="headerlink" title="用PROC步导入数据集"></a>用PROC步导入数据集</h3><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101140851902.png" alt="image-20191101140851902"></p>
+<ol start="2">
+<li><strong>重新命名变量</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*Rename the variables*/</span><br><span class="line">data sp4r.baseball;</span><br><span class="line">   set sp4r.baseball;</span><br><span class="line">   rename nAtBat = At_Bats</span><br><span class="line">	     nHits = Hits</span><br><span class="line">	     nHome = Home_Runs</span><br><span class="line">	     nRuns = Runs</span><br><span class="line">	     nRBI = RBIs</span><br><span class="line">	     nError = Errors;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>从txt文档把数据复制进来</strong></li>
+</ol>
+<p>这个的<strong>使用场景</strong>是：</p>
+<p>你打开一个<code>*.txt</code>的文件，然后直接把它的文本内容复制过来；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*Creating a SAS data set from delimited data by hand*/</span><br><span class="line">data sp4r.example_data3;</span><br><span class="line">   length First_name $ 25;</span><br><span class="line">   infile datalines dlm=&apos;*&apos;; /*指定&apos;*&apos;作为分隔符*/</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan*Bakerman*27*68 /*前面已经指定了&apos;*&apos;作为分隔符*/</span><br><span class="line">   Bruce*Wayne*35*70</span><br><span class="line">   Walter*White*51*70</span><br><span class="line">   Henry*Hill*65*66</span><br><span class="line">   Jean Claude*Van Damme*55*69</span><br><span class="line">;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用PROC步导入数据集"><a href="#用PROC步导入数据集" class="headerlink" title="用PROC步导入数据集"></a>用PROC步导入数据集</h3><p><img src="/2019/11/01/sas3/image-20191101140851902.png" alt="image-20191101140851902"></p>
 <p><strong>解释一下部分代码：</strong></p>
 <ul>
 <li><strong>OUT</strong> option: Specify the new SAS data set name</li>
@@ -396,29 +431,59 @@
 <blockquote>
 <p>**注意：若用 PROC IMPORT 读入没有变量名的数据文件，则variable names will default to var1, var2, var3, and so on. </p>
 </blockquote>
-<h4 id="导入数据后生成新的数据集"><a href="#导入数据后生成新的数据集" class="headerlink" title="导入数据后生成新的数据集"></a>导入数据后生成新的数据集</h4><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101141823326.png" alt="image-20191101141823326"></p>
-<p><strong>DATA</strong>后面是新的数据集名称；</p>
-<p><strong>SET</strong>后面是旧的数据集名称；</p>
-<h4 id="更改数据集的列名"><a href="#更改数据集的列名" class="headerlink" title="更改数据集的列名"></a>更改数据集的列名</h4><p><img src="//yupngli.github.io/2019/11/01/sas3/image-20191101141850333.png" alt="image-20191101141850333"></p>
-<h4 id="PROC步导入数据集示例"><a href="#PROC步导入数据集示例" class="headerlink" title="PROC步导入数据集示例"></a>PROC步导入数据集示例</h4><ol>
-<li><strong>导入数据集，并覆盖同名文件</strong></li>
-</ol>
+<h4 id="PROC步导入数据集示例"><a href="#PROC步导入数据集示例" class="headerlink" title="PROC步导入数据集示例"></a>PROC步导入数据集示例</h4><p><strong>导入数据集，并覆盖同名文件</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02d02*/</span><br><span class="line"></span><br><span class="line">/*Import data using PROC IMPORT*/</span><br><span class="line">proc import out=sp4r.baseball </span><br><span class="line">   datafile= &quot;&amp;path/baseball.csv&quot; DBMS=CSV REPLACE;</span><br><span class="line">   getnames=yes;</span><br><span class="line">   datarow=2; </span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意，上面那个<code>REPLACE</code>用来overwrite当前目录下的同名文件！！！</strong></p>
-<ol start="2">
-<li><strong>重新命名变量</strong></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*Rename the variables*/</span><br><span class="line">data sp4r.baseball;</span><br><span class="line">   set sp4r.baseball;</span><br><span class="line">   rename nAtBat = At_Bats</span><br><span class="line">	     nHits = Hits</span><br><span class="line">	     nHome = Home_Runs</span><br><span class="line">	     nRuns = Runs</span><br><span class="line">	     nRBI = RBIs</span><br><span class="line">	     nError = Errors;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><p><strong>i)</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101171752722.png" alt="image-20191101171752722"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*SP4R02e02*/</span><br><span class="line">libname sp4r &apos;/folders/myfolders/sp4r&apos;; /*连接逻辑库*/</span><br><span class="line"></span><br><span class="line">DATA sp4r.Shelter3;</span><br><span class="line">	LENGTH Name $ 25 Color $ 25;</span><br><span class="line">	INFILE DATALINES DLM=&apos;#&apos;;</span><br><span class="line">	INPUT Name $ Age Weight Color $ Cats $;</span><br><span class="line">	DATALINES;</span><br><span class="line">	Pluto#3#25#Black#No</span><br><span class="line">	Lizzie#10#43#Tan#Yes</span><br><span class="line">	Pesci#10#38#Brindle#No</span><br><span class="line">;</span><br><span class="line">RUN;</span><br><span class="line"></span><br><span class="line">PROC PRINT data=sp4r.shelter3;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li><strong>*高难度，手动创建数据集</strong></li>
-</ol>
-<p>这个的<strong>使用场景</strong>是：</p>
-<p>你打开一个<code>*.txt</code>的文件，然后直接把它的文本内容复制过来；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*Creating a SAS data set from delimited data by hand*/</span><br><span class="line">data sp4r.example_data3;</span><br><span class="line">   length First_name $ 25;</span><br><span class="line">   infile datalines dlm=&apos;*&apos;;</span><br><span class="line">   input First_Name $ Last_Name $ age height;</span><br><span class="line">   datalines;</span><br><span class="line">   Jordan*Bakerman*27*68</span><br><span class="line">   Bruce*Wayne*35*70</span><br><span class="line">   Walter*White*51*70</span><br><span class="line">   Henry*Hill*65*66</span><br><span class="line">   Jean Claude*Van Damme*55*69</span><br><span class="line">;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/11/01/sas3/image-20191101173420989.png" alt="image-20191101173420989"></p>
+<hr>
+<p><strong>ii)</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101173613622.png" alt="image-20191101173613622"></p>
+<p><strong>a.</strong> </p>
+<p><img src="/2019/11/01/sas3/image-20191101173737704.png" alt="image-20191101173737704"></p>
+<p>分隔方式是 Tab delimited;</p>
+<p><strong>b.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATA stat_pop;</span><br><span class="line">	LENGTH State $ 25;</span><br><span class="line">	INFILE &apos;/folders/myfolders/sp4r/state_pop.txt&apos; DLM=&apos;09&apos;x; /*9个空格*/</span><br><span class="line">	INPUT State $ Population;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Enhanced-Reporting"><a href="#Enhanced-Reporting" class="headerlink" title="Enhanced Reporting"></a>Enhanced Reporting</h2>
+<p><strong>c.</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101174447784.png" alt="image-20191101174447784"></p>
+<hr>
+<p>iii)</p>
+<p><img src="/2019/11/01/sas3/image-20191101174555561.png" alt="image-20191101174555561"></p>
+<p><strong>a.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PROC IMPORT OUT=State_Pop2 /*注意这里没有分号*/</span><br><span class="line">	DATAFILE=&quot;/folders/myfolders/sp4r/state_pop.xlsx&quot; DBMS=&apos;xlsx&apos;;</span><br><span class="line">	GETNAMES=no;</span><br><span class="line">	SHEET=&apos;State_Pop_Data&apos;;</span><br><span class="line">	DATAROW=1;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果中列名是A，B</p>
+<p><strong>b.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DATA State_Pop2;</span><br><span class="line">	SET State_Pop2;</span><br><span class="line">	RENAME A=State</span><br><span class="line">	B=Population;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
+
+<p><strong>c.</strong></p>
+<p>略</p>
+<h2 id="汇报数据"><a href="#汇报数据" class="headerlink" title="汇报数据"></a>汇报数据</h2><h3 id="汇报数据集的维度与变量名"><a href="#汇报数据集的维度与变量名" class="headerlink" title="汇报数据集的维度与变量名"></a>汇报数据集的维度与变量名</h3><p><img src="/2019/11/01/sas3/image-20191101180139209.png" alt="image-20191101180139209"></p>
+<p>其中 <code>varnum</code> 会print the variables to the results page in the order that they appear in the data set</p>
+<h3 id="类似于R中head-作用的过程步"><a href="#类似于R中head-作用的过程步" class="headerlink" title="类似于R中head()作用的过程步"></a>类似于R中head()作用的过程步</h3><p><img src="/2019/11/01/sas3/image-20191101180508423.png" alt="image-20191101180508423"></p>
+<h3 id="SQL中的SELECT在SAS中的运用"><a href="#SQL中的SELECT在SAS中的运用" class="headerlink" title="SQL中的SELECT在SAS中的运用"></a>SQL中的SELECT在SAS中的运用</h3><p><img src="/2019/11/01/sas3/image-20191101180654295.png" alt="image-20191101180654295"></p>
+<hr>
+<p><strong>SELECT语句</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101180814895.png" alt="image-20191101180814895"></p>
+<h3 id="PROC-PRINT语句下筛选记录"><a href="#PROC-PRINT语句下筛选记录" class="headerlink" title="PROC PRINT语句下筛选记录"></a>PROC PRINT语句下筛选记录</h3><p><img src="/2019/11/01/sas3/image-20191101181055404.png" alt="image-20191101181055404"></p>
+<h4 id="比较大小"><a href="#比较大小" class="headerlink" title="比较大小"></a>比较大小</h4><p><img src="/2019/11/01/sas3/image-20191101181237710.png" alt="image-20191101181237710"></p>
+<blockquote>
+<p>注意： SAS中是可以使用中间那一列的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">WHERE countries IN (&apos;US&apos;,&apos;CA&apos;);</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure>
+
+<h4 id="与、或、非"><a href="#与、或、非" class="headerlink" title="与、或、非"></a>与、或、非</h4><p><img src="/2019/11/01/sas3/image-20191101181420864.png" alt="image-20191101181420864"></p>
+<h3 id="小练习-1"><a href="#小练习-1" class="headerlink" title="小练习"></a>小练习</h3><p><strong>i)</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101181708600.png" alt="image-20191101181708600"></p>
+<hr>
+<p><strong>ii)</strong></p>
+<p><img src="/2019/11/01/sas3/image-20191101181801770.png" alt="image-20191101181801770"></p>
+<h2 id="增强型汇报"><a href="#增强型汇报" class="headerlink" title="增强型汇报"></a>增强型汇报</h2><h3 id="Labels-与-Formats"><a href="#Labels-与-Formats" class="headerlink" title="Labels 与 Formats"></a>Labels 与 Formats</h3>
     </div>
 
     
@@ -435,7 +500,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yupngli.github.io/2019/11/01/sas3/" title="SAS学习笔记第三章-DATA步">http://yupngli.github.io/2019/11/01/sas3/</a>
+    <a href="http://yupngli.github.io/2019/11/01/sas3/" title="SAS学习笔记第三章-导入与汇报数据">http://yupngli.github.io/2019/11/01/sas3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -515,7 +580,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导入与汇报数据"><span class="nav-number">1.</span> <span class="nav-text">导入与汇报数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据集"><span class="nav-number">1.1.</span> <span class="nav-text">创建数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的一般语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建数据集的一般语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定变量值的长度"><span class="nav-number">1.1.2.</span> <span class="nav-text">指定变量值的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的示例"><span class="nav-number">1.1.3.</span> <span class="nav-text">创建数据集的示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分行读数据"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">分行读数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不分行读数据-使用"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">不分行读数据 - 使用@@</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习1"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">小练习1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习2"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">小练习2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入数据集"><span class="nav-number">1.2.</span> <span class="nav-text">导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用DATA步导入数据集"><span class="nav-number">1.2.1.</span> <span class="nav-text">用DATA步导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DATA步导入数据集示例"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">DATA步导入数据集示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用PROC步导入数据集"><span class="nav-number">1.2.2.</span> <span class="nav-text">用PROC步导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入数据后生成新的数据集"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">导入数据后生成新的数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改数据集的列名"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">更改数据集的列名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PROC步导入数据集示例"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">PROC步导入数据集示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enhanced-Reporting"><span class="nav-number">1.3.</span> <span class="nav-text">Enhanced Reporting</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#导入与汇报数据"><span class="nav-number">1.</span> <span class="nav-text">导入与汇报数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据集"><span class="nav-number">1.1.</span> <span class="nav-text">创建数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的一般语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建数据集的一般语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定变量值的长度"><span class="nav-number">1.1.2.</span> <span class="nav-text">指定变量值的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据集的示例"><span class="nav-number">1.1.3.</span> <span class="nav-text">创建数据集的示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分行读数据"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">分行读数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不分行读数据-使用"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">不分行读数据 - 使用@@</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习1"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">小练习1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习2"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">小练习2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入数据集"><span class="nav-number">1.2.</span> <span class="nav-text">导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用DATA步导入数据集"><span class="nav-number">1.2.1.</span> <span class="nav-text">用DATA步导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入数据后生成新的数据集"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">导入数据后生成新的数据集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改数据集的列名"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">更改数据集的列名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DATA步导入数据集示例"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">DATA步导入数据集示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用PROC步导入数据集"><span class="nav-number">1.2.2.</span> <span class="nav-text">用PROC步导入数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PROC步导入数据集示例"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">PROC步导入数据集示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习"><span class="nav-number">1.2.3.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汇报数据"><span class="nav-number">1.3.</span> <span class="nav-text">汇报数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#汇报数据集的维度与变量名"><span class="nav-number">1.3.1.</span> <span class="nav-text">汇报数据集的维度与变量名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类似于R中head-作用的过程步"><span class="nav-number">1.3.2.</span> <span class="nav-text">类似于R中head()作用的过程步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL中的SELECT在SAS中的运用"><span class="nav-number">1.3.3.</span> <span class="nav-text">SQL中的SELECT在SAS中的运用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PROC-PRINT语句下筛选记录"><span class="nav-number">1.3.4.</span> <span class="nav-text">PROC PRINT语句下筛选记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#比较大小"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">比较大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与、或、非"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">与、或、非</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习-1"><span class="nav-number">1.3.5.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强型汇报"><span class="nav-number">1.4.</span> <span class="nav-text">增强型汇报</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Labels-与-Formats"><span class="nav-number">1.4.1.</span> <span class="nav-text">Labels 与 Formats</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
