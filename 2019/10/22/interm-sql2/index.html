@@ -374,10 +374,10 @@
 <h2 id="CTE-Common-Table-Expression-公用表表达式"><a href="#CTE-Common-Table-Expression-公用表表达式" class="headerlink" title="CTE(Common Table Expression) 公用表表达式"></a>CTE(Common Table Expression) 公用表表达式</h2><p>CTE(Common Table Expression) 公用表表达式，它是在单个语句的执行范围内定义的临时结果集（<strong>片段</strong>），只在查询期间有效。它可以自引用，也可在同一查询中多次引用，实现了代码段的重复利用。</p>
 <h3 id="用CTE生成国家-地区列表以及每个国家-地区中总进球数超过10个的比赛数量"><a href="#用CTE生成国家-地区列表以及每个国家-地区中总进球数超过10个的比赛数量" class="headerlink" title="用CTE生成国家/地区列表以及每个国家/地区中总进球数超过10个的比赛数量"></a>用CTE生成国家/地区列表以及每个国家/地区中总进球数超过10个的比赛数量</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 做出一个包含进球数大于等于10的国家以及对应的比赛表</span></span><br><span class="line"><span class="comment">可以供后面的所有查询利用 </span></span><br><span class="line"><span class="comment">此片段（临时表）的名称是 match_list */</span></span><br><span class="line"><span class="keyword">WITH</span> match_list <span class="keyword">AS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> </span><br><span class="line">  		country_id, </span><br><span class="line">  		<span class="keyword">id</span></span><br><span class="line">    <span class="keyword">FROM</span> <span class="keyword">match</span></span><br><span class="line">    <span class="keyword">WHERE</span> (home_goal + away_goal) &gt;= <span class="number">10</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">-- Select league and count of matches from the CTE</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    l.name <span class="keyword">AS</span> league,</span><br><span class="line">    <span class="keyword">COUNT</span>(match_list.id) <span class="keyword">AS</span> matches</span><br><span class="line"><span class="keyword">FROM</span> league <span class="keyword">AS</span> l</span><br><span class="line"><span class="comment">-- Join the CTE to the league table</span></span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> match_list <span class="keyword">ON</span> l.id = match_list.country_id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> l.name;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/10/22/interm-sql2/team.jpg" alt="team"></p>
-<p><img src="/2019/10/22/interm-sql2/match.png" alt="match"></p>
+<p><img src="//yupngli.github.io/2019/10/22/interm-sql2/team.jpg" alt="team"></p>
+<p><img src="//yupngli.github.io/2019/10/22/interm-sql2/match.png" alt="match"></p>
 <p>以上是两张查询表。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="/2019/10/22/interm-sql2/choice1.png" alt="choice1"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="//yupngli.github.io/2019/10/22/interm-sql2/choice1.png" alt="choice1"></p>
 
     </div>
 
@@ -500,7 +500,7 @@
         
           <a href="/archives">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
