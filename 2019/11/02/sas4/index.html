@@ -63,10 +63,26 @@
 <meta property="og:site_name" content="LE-VIA-THAN">
 <meta property="og:description" content="创建新变量、函数、数据表 创建新变量 创建新函数 创建新数据表">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-02T02:19:22.578Z">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102102303464.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102102908280.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102103703331.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102103759058.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102103857978.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104023305.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104243851.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104332926.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104600610.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104638446.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104709100.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104724063.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102104854900.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102105012955.png">
+<meta property="og:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102105053091.png">
+<meta property="og:updated_time" content="2019-11-02T02:53:44.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAS学习笔记第四章 - 创建新变量、函数、数据表">
 <meta name="twitter:description" content="创建新变量、函数、数据表 创建新变量 创建新函数 创建新数据表">
+<meta name="twitter:image" content="http://yupngli.github.io/2019/11/02/sas4/image-20191102102303464.png">
   <link rel="canonical" href="http://yupngli.github.io/2019/11/02/sas4/">
 
 
@@ -298,7 +314,7 @@
                 
               
 
-              <time title="创建时间：2019-11-02 10:17:09 / 修改时间：10:19:22" itemprop="dateCreated datePublished" datetime="2019-11-02T10:17:09+08:00">2019-11-02</time>
+              <time title="创建时间：2019-11-02 10:17:09 / 修改时间：10:53:44" itemprop="dateCreated datePublished" datetime="2019-11-02T10:17:09+08:00">2019-11-02</time>
             </span>
           
             
@@ -324,7 +340,52 @@
 </ul>
 <a id="more"></a>
 
-<h2 id="创建新变量"><a href="#创建新变量" class="headerlink" title="创建新变量"></a>创建新变量</h2><h2 id="创建新函数"><a href="#创建新函数" class="headerlink" title="创建新函数"></a>创建新函数</h2><h2 id="创建新数据表"><a href="#创建新数据表" class="headerlink" title="创建新数据表"></a>创建新数据表</h2>
+<h2 id="创建新变量"><a href="#创建新变量" class="headerlink" title="创建新变量"></a>创建新变量</h2><ul>
+<li>Create and add new variables to the data table.</li>
+<li>Use IF-THEN/ELSE statements to create new variables conditionally.</li>
+</ul>
+<h3 id="单变量Conditional-Processing"><a href="#单变量Conditional-Processing" class="headerlink" title="单变量Conditional Processing"></a>单变量Conditional Processing</h3><h4 id="数值型变量处理"><a href="#数值型变量处理" class="headerlink" title="数值型变量处理"></a>数值型变量处理</h4><p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102102303464.png" alt="image-20191102102303464"></p>
+<p>比如要完成下面的目标：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102102908280.png" alt="image-20191102102908280"></p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102103703331.png" alt="image-20191102103703331"></p>
+<p>打印出来看看：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102103759058.png" alt="image-20191102103759058"></p>
+<h4 id="字符型变量处理"><a href="#字符型变量处理" class="headerlink" title="字符型变量处理"></a>字符型变量处理</h4><blockquote>
+<p>任何时候创建character的变量，一定要记住使用<strong>LENGTH</strong></p>
+</blockquote>
+<p>目标：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102103857978.png" alt="image-20191102103857978"></p>
+<p>代码以及输出结果：（注意那个 <strong>LENGTH</strong> 别漏掉了）</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104023305.png" alt="image-20191102104023305"></p>
+<h4 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h4><p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104243851.png" alt="image-20191102104243851"></p>
+<hr>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104332926.png" alt="image-20191102104332926"></p>
+<h3 id="多变量Conditional-Processing-DO-Group"><a href="#多变量Conditional-Processing-DO-Group" class="headerlink" title="多变量Conditional Processing (DO Group)"></a>多变量Conditional Processing (DO Group)</h3><p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104600610.png" alt="image-20191102104600610"></p>
+<p>目标：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104638446.png" alt="image-20191102104638446"></p>
+<p>代码：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104709100.png" alt="image-20191102104709100"></p>
+<p>输出：</p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104724063.png" alt="image-20191102104724063"></p>
+<h4 id="小练习-1"><a href="#小练习-1" class="headerlink" title="小练习"></a>小练习</h4><p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102104854900.png" alt="image-20191102104854900"></p>
+<hr>
+<h3 id="小练习-2"><a href="#小练习-2" class="headerlink" title="小练习"></a>小练习</h3><p><strong>i)</strong></p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102105012955.png" alt="image-20191102105012955"></p>
+<hr>
+<p><strong>ii)</strong></p>
+<p><img src="//yupngli.github.io/2019/11/02/sas4/image-20191102105053091.png" alt="image-20191102105053091"></p>
+<h2 id="创建新函数"><a href="#创建新函数" class="headerlink" title="创建新函数"></a>创建新函数</h2><ul>
+<li>Use SAS functions.</li>
+<li>Create and apply user-defined functions with the FCMP procedure.</li>
+</ul>
+<h2 id="创建新数据表"><a href="#创建新数据表" class="headerlink" title="创建新数据表"></a>创建新数据表</h2><ul>
+<li>Use the KEEP, DROP, FIRSTOBS, and OBS options in a DATA step to create a subsetted data table.</li>
+<li>Use the WHERE statement in a DATA step to create new data tables conditionally.</li>
+<li>Query the data table with PROC SQL to create new data tables.</li>
+<li>Use the SET statement in a DATA step to concatenate data tables.</li>
+<li>Use the MERGE and BY statements in a DATA step to merge data tables.</li>
+</ul>
+
     </div>
 
     
@@ -421,7 +482,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建新变量、函数、数据表"><span class="nav-number">1.</span> <span class="nav-text">创建新变量、函数、数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新变量"><span class="nav-number">1.1.</span> <span class="nav-text">创建新变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新函数"><span class="nav-number">1.2.</span> <span class="nav-text">创建新函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新数据表"><span class="nav-number">1.3.</span> <span class="nav-text">创建新数据表</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建新变量、函数、数据表"><span class="nav-number">1.</span> <span class="nav-text">创建新变量、函数、数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新变量"><span class="nav-number">1.1.</span> <span class="nav-text">创建新变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单变量Conditional-Processing"><span class="nav-number">1.1.1.</span> <span class="nav-text">单变量Conditional Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值型变量处理"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">数值型变量处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符型变量处理"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">字符型变量处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多变量Conditional-Processing-DO-Group"><span class="nav-number">1.1.2.</span> <span class="nav-text">多变量Conditional Processing (DO Group)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小练习-1"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小练习-2"><span class="nav-number">1.1.3.</span> <span class="nav-text">小练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新函数"><span class="nav-number">1.2.</span> <span class="nav-text">创建新函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新数据表"><span class="nav-number">1.3.</span> <span class="nav-text">创建新数据表</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
